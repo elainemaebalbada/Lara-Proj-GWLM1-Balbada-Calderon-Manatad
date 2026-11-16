@@ -1,4 +1,4 @@
-
+﻿
 document.addEventListener('DOMContentLoaded', function () {
 
     /* ========================================
@@ -22,18 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     if ('IntersectionObserver' in window) {
-
         const observer = new IntersectionObserver(function (entries) {
-
             entries.forEach(function (entry) {
-
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
                     observer.unobserve(entry.target);
                 }
-
             });
-
         }, {
             threshold: 0.15
         });
@@ -43,13 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     } else {
-
         revealElements.forEach(function (element) {
             element.classList.add('is-visible');
         });
-
     }
-
 
     /* ========================================
        CONTACT FORM VALIDATION
@@ -60,57 +52,77 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!contactForm) return;
 
+    const fields = [
+        { id: 'name', message: 'Please enter your name.' },
+        { id: 'email', message: 'Please enter a valid email address.' },
+        { id: 'subject', message: 'Please enter a subject.' },
+        { id: 'message', message: 'Please enter your message.' }
+    ];
+
+    function clearFieldError(input) {
+        const error = document.getElementById(input.id + '-error');
+
+        input.classList.remove('invalid');
+        input.setAttribute('aria-invalid', 'false');
+
+        if (error) {
+            error.textContent = '';
+        }
+    }
+
+    function showFieldError(input, message) {
+        const error = document.getElementById(input.id + '-error');
+
+        input.classList.add('invalid');
+        input.setAttribute('aria-invalid', 'true');
+
+        if (error) {
+            error.textContent = message;
+        }
+    }
+
+    // Clear an individual error when the user edits a field.
+    fields.forEach(function (field) {
+        const input = document.getElementById(field.id);
+
+        input.addEventListener('input', function () {
+            clearFieldError(input);
+            feedback.className = 'form-feedback';
+            feedback.textContent = '';
+        });
+    });
+
     contactForm.addEventListener('submit', function (event) {
-
         event.preventDefault();
-
-        const fields = [
-            { id: 'name', message: 'Please enter your name.' },
-            { id: 'email', message: 'Please enter a valid email address.' },
-            { id: 'subject', message: 'Please enter a subject.' },
-            { id: 'message', message: 'Please enter your message.' }
-        ];
 
         let isValid = true;
 
         fields.forEach(function (field) {
-
             const input = document.getElementById(field.id);
-            const error = input.parentElement.querySelector('.error-message');
 
-            input.classList.remove('invalid');
-            error.textContent = '';
+            clearFieldError(input);
 
             if (!input.value.trim()) {
-                input.classList.add('invalid');
-                error.textContent = field.message;
+                showFieldError(input, field.message);
                 isValid = false;
             }
-
         });
 
         const email = document.getElementById('email');
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (email.value.trim() && !emailPattern.test(email.value.trim())) {
-
-            const error = email.parentElement.querySelector('.error-message');
-
-            email.classList.add('invalid');
-            error.textContent = 'Please enter a valid email address.';
+            showFieldError(email, 'Please enter a valid email address.');
             isValid = false;
-
         }
 
         feedback.className = 'form-feedback';
         feedback.textContent = '';
 
         if (!isValid) {
-
             feedback.classList.add('error');
             feedback.textContent = 'Please check the highlighted fields.';
             return;
-
         }
 
         feedback.classList.add('success');
@@ -120,14 +132,8 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.reset();
 
         fields.forEach(function (field) {
-
-            const input = document.getElementById(field.id);
-
-            input.classList.remove('invalid');
-            input.parentElement.querySelector('.error-message').textContent = '';
-
+            clearFieldError(document.getElementById(field.id));
         });
-
     });
 
 });

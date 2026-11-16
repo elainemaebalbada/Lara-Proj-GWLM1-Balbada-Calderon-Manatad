@@ -77,6 +77,8 @@
                             id="name"
                             name="name"
                             placeholder="Enter your name"
+                            aria-describedby="name-error"
+                            aria-invalid="false"
                             required>
                         <small class="error-message"></small>
                     </div>
@@ -88,12 +90,11 @@
                             id="email"
                             name="email"
                             placeholder="Enter your email"
+                            aria-describedby="email-error"
                             required>
                         <small class="error-message"></small>
                     </div>
-
                 </div>
-
                 <div class="form-group">
                     <label for="subject">Subject</label>
                     <input
@@ -101,10 +102,11 @@
                         id="subject"
                         name="subject"
                         placeholder="What is your inquiry about?"
+                        aria-describedby="subject-error"
+                         aria-invalid="false"
                         required>
-                    <small class="error-message"></small>
+                    <small class="error-message" id="subject-error"></small>
                 </div>
-
                 <div class="form-group">
                     <label for="message">Your Message</label>
                     <textarea
@@ -112,9 +114,13 @@
                         name="message"
                         rows="6"
                         placeholder="Write your message here..."
+                        aria-describedby="message-error"
+                        aria-invalid="false"
                         required></textarea>
-                    <small class="error-message"></small>
+                    <small class="error-message" id="message-error"></small>
                 </div>
+
+
 
                 <button type="submit" class="contact-submit">
                     Send Message <span>↗</span>
