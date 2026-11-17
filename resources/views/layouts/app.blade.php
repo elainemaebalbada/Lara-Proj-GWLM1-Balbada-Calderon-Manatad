@@ -79,7 +79,18 @@
         <div class="footer-container">
 
             <div class="footer-brand">
-                <a href="{{ url('/') }}" class="brand-name">SnappyBoo.</a>
+                <a href="{{ url('/') }}" class="footer-brand-logo">
+                    <img src="{{ asset('images/snappyboo-icon-light.png') }}"
+                        class="brand-icon light-icon"
+                        alt="Snappyboo logo">
+
+                    <img src="{{ asset('images/snappyboo-icon-dark.png') }}"
+                        class="brand-icon dark-icon"
+                        alt="Snappyboo logo">
+
+                    <span class="brand-name">SnappyBoo.</span>
+                </a>
+
                 <p>Little cameras, lasting memories.</p>
                 <span>Butuan City, Philippines</span>
             </div>
