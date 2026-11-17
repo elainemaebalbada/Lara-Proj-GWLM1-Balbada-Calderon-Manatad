@@ -11,3 +11,6 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+// Contact Page
+Route::view('/contact', 'contact')->name('contact');
