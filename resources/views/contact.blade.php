@@ -77,6 +77,7 @@
                             placeholder="Enter your name"
                             aria-describedby="name-error"
                             aria-invalid="false"
+                            autocomplete="name"
                             required>
                         <small class="error-message" id="name-error"></small>
                     </div>
@@ -90,6 +91,7 @@
                             placeholder="Enter your email"
                             aria-describedby="email-error"
                             aria-invalid="false"
+                            autocomplete="email"
                             required>
                         <small class="error-message" id="email-error"></small>
                     </div>
@@ -119,6 +121,7 @@
                         placeholder="Write your message here..."
                         aria-describedby="message-error message-counter"
                         aria-invalid="false"
+                        spellcheck="true"
                         required></textarea>
 
                     <small class="error-message" id="message-error"></small>
