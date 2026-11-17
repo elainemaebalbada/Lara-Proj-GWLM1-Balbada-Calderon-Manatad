@@ -300,6 +300,21 @@
     color: #B64D4D;
 }
 
+/* MESSAGE CHARACTER COUNTER */
+.message-counter {
+    margin-top: -2px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: right;
+    transition: color 0.25s ease;
+}
+
+.message-counter.is-near-limit {
+    color: #B64D4D;
+    font-weight: 700;
+}
+
+
 /* ========================================
    SCROLL REVEAL
 ======================================== */

@@ -1,5 +1,4 @@
-﻿
-document.addEventListener('DOMContentLoaded', function () {
+﻿document.addEventListener('DOMContentLoaded', function () {
 
     /* ========================================
        SCROLL REVEAL
@@ -59,6 +58,33 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'message', message: 'Please enter your message.' }
     ];
 
+    /* ========================================
+       MESSAGE CHARACTER COUNTER
+    ======================================== */
+
+    const messageInput = document.getElementById('message');
+    const messageCounter = document.getElementById('message-counter');
+    const maxMessageLength = 500;
+
+    function updateMessageCounter() {
+        const currentLength = messageInput.value.length;
+
+        messageCounter.textContent =
+            `${currentLength} / ${maxMessageLength} characters`;
+
+        messageCounter.classList.toggle(
+            'is-near-limit',
+            currentLength >= 450
+        );
+    }
+
+    messageInput.addEventListener('input', updateMessageCounter);
+    updateMessageCounter();
+
+    /* ========================================
+       FIELD ERROR HANDLING
+    ======================================== */
+
     function clearFieldError(input) {
         const error = document.getElementById(input.id + '-error');
 
@@ -91,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
             feedback.textContent = '';
         });
     });
+
+    /* ========================================
+       FORM SUBMISSION
+    ======================================== */
 
     contactForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -130,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'Thank you! Your message has been prepared successfully.';
 
         contactForm.reset();
+        updateMessageCounter();
 
         fields.forEach(function (field) {
             clearFieldError(document.getElementById(field.id));
