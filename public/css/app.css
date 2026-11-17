@@ -57,6 +57,13 @@ button {
     cursor: pointer;
 }
 
+/* KEYBOARD ACCESSIBILITY */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
 main {
     flex: 1;
 }
@@ -181,9 +188,18 @@ html[data-theme="dark"] .dark-icon {
     gap: 50px;
 }
 
+.footer-brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
 .footer-brand .brand-name {
     display: inline-block;
-    margin-bottom: 12px;
+    font-size: 25px;
+    margin-bottom: 0;
+    color: var(--text);
 }
 
 .footer-brand p {
