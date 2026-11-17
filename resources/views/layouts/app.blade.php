@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script>
+    (function () {
+        const savedTheme = localStorage.getItem('snappyboo-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+    </script>
+
     <title>@yield('title', 'Snappyboo | Camera Rental')</title>
 
     <!-- Google Fonts -->
