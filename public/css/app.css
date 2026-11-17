@@ -57,6 +57,13 @@ button {
     cursor: pointer;
 }
 
+/* KEYBOARD ACCESSIBILITY */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
 main {
     flex: 1;
 }
