@@ -131,14 +131,11 @@
     <!-- MEET THE TEAM -->
     <section class="about-team" data-reveal>
         <div class="about-section-heading">
-            <span class="about-eyebrow">THE PEOPLE BEHIND THE PROJECT</span>
+            <span class="about-eyebrow">THE PEOPLE BEHIND THE PROJECT WEBSITE</span>
             <h2>
                 Meet the Snappyboo
                 <span>team.</span>
             </h2>
-            <p>
-                The group behind the Snappyboo Camera Rental website.
-            </p>
         </div>
 
         <div class="about-team-grid">
