@@ -70,7 +70,7 @@
         const currentLength = messageInput.value.length;
 
         messageCounter.textContent =
-            ${currentLength} / ${maxMessageLength} characters;
+            `${currentLength} / ${maxMessageLength} characters`;
 
         messageCounter.classList.toggle(
             'is-near-limit',

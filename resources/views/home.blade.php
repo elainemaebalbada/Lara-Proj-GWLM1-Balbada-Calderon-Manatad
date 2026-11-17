@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'Home | Snappyboo Camera Rental')
+@section('title', 'Home | SnappyBoo Camera Rental')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -21,7 +21,7 @@
 
             <p>
                 Bring your moments to life with a digital camera.<br>
-                Find your next camera companion with Snappyboo.
+                Find your next camera companion with SnappyBoo.
             </p>
 
             <div class="hero-actions">
@@ -50,7 +50,7 @@
         <h2>Make every moment worth remembering.</h2>
 
         <p>
-            Snappyboo is a digital camera rental service based in
+            SnappyBoo is a digital camera rental service based in
             Butuan City, making it easier to enjoy the charm of
             capturing everyday moments through a camera.
         </p>
@@ -152,13 +152,15 @@
 
 
         <div class="camera-collection-cta">
-            <p>Interested in renting a camera? Send us a message for inquiries.</p>
+            <p>
+                See photos taken with our rental cameras on Instagram.
+            </p>
 
             <a href="https://www.instagram.com/snappyboo.bxu/"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-primary">
-                Inquire on Instagram
+                Explore Our Instagram
             </a>
         </div>
     </section>
@@ -186,8 +188,8 @@
                 <span class="process-number">02</span>
                 <h3>Inquire</h3>
                 <p>
-                    Send us a message through Instagram to
-                    ask about availability and rental details.
+                    Visit our <a href="{{ url('/contact') }}">Contact page</a>
+                    to ask about availability and rental details.
                 </p>
             </div>
 
@@ -199,6 +201,18 @@
                     ready to capture your favorite moments.
                 </p>
             </div>
+        </div>
+
+        <!-- Contact Inquiry -->
+        <div class="camera-collection-cta">
+            <h3>Interested in renting a camera?</h3>
+            <p>
+                Get in touch with us through our Contact page.
+            </p>
+
+            <a href="{{ url('/contact') }}" class="btn-primary">
+                Contact Us
+            </a>
         </div>
     </section>
 
