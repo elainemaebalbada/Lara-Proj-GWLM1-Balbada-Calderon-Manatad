@@ -1,6 +1,8 @@
 
 @extends('layouts.app')
 
+@section('title', 'About Us | SnappyBoo Camera Rental')
+
 @section('content')
 
 <div class="about-page">
@@ -14,7 +16,7 @@
                 <span>a lot of memories.</span>
             </h1>
             <p>
-                Discover the charm of digital photography with Snappyboo.<br>
+                Discover the charm of digital photography with SnappyBoo.<br>
                 We make digicam rentals accessible for moments you want
                 to capture and keep.
             </p>
@@ -51,7 +53,7 @@
 
         <div class="about-story-content">
             <p>
-                Snappyboo is a digital camera rental service based in
+                SnappyBoo is a digital camera rental service based in
                 Butuan City, created for people who enjoy the nostalgic
                 look and feel of digital camera photography.
             </p>
@@ -66,7 +68,7 @@
             <div class="about-more-text" id="aboutMoreText" hidden>
                 <p>
                     From casual outings and celebrations to trips with
-                    friends and family, Snappyboo aims to make digital
+                    friends and family, SnappyBoo aims to make digital
                     photography more accessible and enjoyable.
                 </p>
                 <p>
@@ -133,7 +135,7 @@
         <div class="about-section-heading">
             <span class="about-eyebrow">THE PEOPLE BEHIND THE PROJECT WEBSITE</span>
             <h2>
-                Meet the Snappyboo
+                Meet the SnappyBoo
                 <span>team.</span>
             </h2>
         </div>
@@ -200,21 +202,19 @@
             </span>
             <h2>
                 Let's make it a
-                <span>Snappyboo moment.</span>
+                <span>SnappyBoo moment.</span>
             </h2>
             <p>
-                Explore our cameras and message us on Instagram
-                for rental inquiries.
+                Discover our cameras and find the perfect companion
+                for your next memorable experience.
             </p>
         </div>
 
         <a
-            href="https://www.instagram.com/snappyboo.bxu/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="{{ url('/') }}#camera-collection"
             class="about-cta-button"
         >
-            Find us on Instagram <span aria-hidden="true">↗</span>
+            Explore Our Cameras <span aria-hidden="true">↗</span>
         </a>
     </section>
 

@@ -542,4 +542,19 @@
     cursor: pointer;
 }
 
+/* CONTACT INQUIRY BELOW RENTAL PROCESS */
+.process-section > .camera-collection-cta {
+    max-width: 700px;
+    margin: 70px auto 0;
+    text-align: center;
+}
 
+.process-section > .camera-collection-cta h3 {
+    margin: 0 0 14px;
+}
+
+.process-section > .camera-collection-cta p {
+    max-width: 600px;
+    margin: 0 auto 24px;
+    line-height: 1.7;
+}
