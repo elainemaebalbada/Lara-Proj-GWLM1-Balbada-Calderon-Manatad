@@ -70,7 +70,7 @@
         const currentLength = messageInput.value.length;
 
         messageCounter.textContent =
-            `${currentLength} / ${maxMessageLength} characters`;
+            ${currentLength} / ${maxMessageLength} characters;
 
         messageCounter.classList.toggle(
             'is-near-limit',
@@ -107,7 +107,6 @@
         }
     }
 
-    // Clear an individual error when the user edits a field.
     fields.forEach(function (field) {
         const input = document.getElementById(field.id);
 
@@ -126,6 +125,7 @@
         event.preventDefault();
 
         let isValid = true;
+        let firstInvalidField = null;
 
         fields.forEach(function (field) {
             const input = document.getElementById(field.id);
@@ -135,6 +135,10 @@
             if (!input.value.trim()) {
                 showFieldError(input, field.message);
                 isValid = false;
+
+                if (!firstInvalidField) {
+                    firstInvalidField = input;
+                }
             }
         });
 
@@ -144,6 +148,10 @@
         if (email.value.trim() && !emailPattern.test(email.value.trim())) {
             showFieldError(email, 'Please enter a valid email address.');
             isValid = false;
+
+            if (!firstInvalidField) {
+                firstInvalidField = email;
+            }
         }
 
         feedback.className = 'form-feedback';
@@ -152,6 +160,11 @@
         if (!isValid) {
             feedback.classList.add('error');
             feedback.textContent = 'Please check the highlighted fields.';
+
+            if (firstInvalidField) {
+                firstInvalidField.focus();
+            }
+
             return;
         }
 

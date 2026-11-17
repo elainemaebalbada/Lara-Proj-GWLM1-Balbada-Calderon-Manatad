@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('title', 'Contact | Snappyboo Camera Rental')
@@ -56,7 +55,6 @@
 
         </div>
 
-
         <!-- RIGHT: CONTACT FORM -->
         <div class="contact-form-wrapper">
 
@@ -80,7 +78,7 @@
                             aria-describedby="name-error"
                             aria-invalid="false"
                             required>
-                        <small class="error-message"></small>
+                        <small class="error-message" id="name-error"></small>
                     </div>
 
                     <div class="form-group">
@@ -91,10 +89,13 @@
                             name="email"
                             placeholder="Enter your email"
                             aria-describedby="email-error"
+                            aria-invalid="false"
                             required>
-                        <small class="error-message"></small>
+                        <small class="error-message" id="email-error"></small>
                     </div>
+
                 </div>
+
                 <div class="form-group">
                     <label for="subject">Subject</label>
                     <input
@@ -103,29 +104,29 @@
                         name="subject"
                         placeholder="What is your inquiry about?"
                         aria-describedby="subject-error"
-                         aria-invalid="false"
+                        aria-invalid="false"
                         required>
                     <small class="error-message" id="subject-error"></small>
                 </div>
+
                 <div class="form-group">
                     <label for="message">Your Message</label>
-                   <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    maxlength="500"
-                    placeholder="Write your message here..."
-                    aria-describedby="message-error message-counter"
-                    aria-invalid="false"
-                    required></textarea>
-                <small class="error-message" id="message-error"></small>
-                <div class="message-counter" id="message-counter" aria-live="polite">
-                    0 / 500 characters
-                </div>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        maxlength="500"
+                        placeholder="Write your message here..."
+                        aria-describedby="message-error message-counter"
+                        aria-invalid="false"
+                        required></textarea>
+
                     <small class="error-message" id="message-error"></small>
+
+                    <div class="message-counter" id="message-counter" aria-live="polite">
+                        0 / 500 characters
+                    </div>
                 </div>
-
-
 
                 <button type="submit" class="contact-submit">
                     Send Message <span>↗</span>
@@ -146,5 +147,3 @@
 @push('scripts')
     <script src="{{ asset('js/contact.js') }}" defer></script>
 @endpush
-
-
